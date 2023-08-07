@@ -1,7 +1,14 @@
 import React, { useState } from 'react'
-import {data} from '../data/data.js'
+import {categories, data} from '../data/data.js'
 const Food = () => {
     const[foods, setFoods]=useState(data);
+    const filterType=(categories)=>{
+      setFoods(
+        data.filter((item)=>{
+          return item.category===category
+        })
+      )
+    }
   return (
     <div className='max-w-[1640px] m-auto px-4 py-12'>
       <h1 className='text-orange-600 font-bold text-4xl text-center'>Top Rated Menu Items</h1>
@@ -33,9 +40,9 @@ const Food = () => {
             <img src={item.image} alt={item.name}
             className='w-full h-[200px] object-cover rounded-t-lg'
             />
-            <div>
-              <p>{item.name}</p>
-              <p><span>{item.price}</span></p>
+            <div className='flex justify-between px-2 py-4'>
+              <p className='font-bold'>{item.name}</p>
+              <p><span className='bg-orange-500 text-white p-1 rounded-full'>{item.price}</span></p>
             </div>
           </div> 
         ))}
