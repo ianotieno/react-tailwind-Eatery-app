@@ -9,6 +9,13 @@ const Food = () => {
         })
       )
     }
+    const filterPrice=(price)=>{
+      setFoods(
+        data.filter((item)=>{
+          return item.price===price
+        })
+      )
+    }
   return (
     <div className='max-w-[1640px] m-auto px-4 py-12'>
       <h1 className='text-orange-600 font-bold text-4xl text-center'>Top Rated Menu Items</h1>
