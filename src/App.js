@@ -10,8 +10,9 @@ function App() {
     <div>
        <Navbar/> 
        <Hero/>
-       <Food/>
        <HeadlineCards/>
+       <Food/>
+       
     </div>
   );
 }
