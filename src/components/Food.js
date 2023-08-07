@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import {categories, data} from '../data/data.js'
 const Food = () => {
     const[foods, setFoods]=useState(data);
-    const filterType=(categories)=>{
+    const filterType=(category)=>{
       setFoods(
         data.filter((item)=>{
           return item.category===category
@@ -33,10 +33,10 @@ const Food = () => {
         <div>
           <p className='font-bold text-gray-700'>Filter Price</p>
           <div className='flex justify-between max-w-[390px] w-ful'>
-            <button  className='m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white' >$</button>
-            <button className='m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white'>$$</button>
-            <button className='m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white'>$$$</button>
-            <button className='m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white'>$$$$</button>
+            <button onClick={()=>filterPrice('100')}  className='m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white' >ksh:100</button>
+            <button onClick={()=>filterPrice('200')} className='m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white'>ksh:200</button>
+            <button onClick={()=>filterPrice('300')} className='m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white'>ksh:300</button>
+            <button onClick={()=>filterPrice('400')} className='m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white'>ksh:400</button>
           </div>
         </div>
       </div>
