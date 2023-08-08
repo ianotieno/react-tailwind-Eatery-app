@@ -4,11 +4,13 @@ import { BsFillCartFill,BsFillSaveFill } from 'react-icons/bs';
 import {TbTruckDelivery} from 'react-icons/tb'
 import {FaUserFriends, FaWallet} from 'react-icons/fa'
 import {MdFavorite, MdHelp} from 'react-icons/md'
+import SearchComponent from './SearchComponent';
 
 const Navbar = () => {
 const [nav, setNav] = useState(false)
-
+const [searchQuery, setSearchQuery] = useState('');
   return (
+    <>
     <div className='max-w-[1640px] mx-auto flex justify-between items-center p-4'>
       
       <div className='flex items-center'>
@@ -31,6 +33,8 @@ const [nav, setNav] = useState(false)
           className='bg-transparent p-2 w-full focus:outline-none'
           type='text'
           placeholder='Search foods'
+          value={searchQuery}
+          onChange={e=>setSearchQuery(e.target.value)}
         />
       </div>
       
@@ -62,6 +66,8 @@ const [nav, setNav] = useState(false)
         </nav>
       </div>
     </div>
+    <SearchComponent searchQuery={searchQuery} />
+    </>
   );
 };
 
