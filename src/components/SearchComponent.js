@@ -14,7 +14,10 @@ const SearchComponent = ({ searchQuery }) => {
   );
 
   return (
-    <div style={{ marginTop: 10 }}>
+    <div className=" ">
+     <div className="inline-flex flex-col justify-center relative text-gray-500">
+     
+        <div class="relative">
       {filteredName.length === 0 ? (
        <p className='font-bold text-2xl px-2 pt-4'><span>No matching products found</span></p> 
       ) : (
@@ -26,6 +29,8 @@ const SearchComponent = ({ searchQuery }) => {
           </div>
         ))
       )}
+      </div>
+      </div>
     </div>
   );
 };
